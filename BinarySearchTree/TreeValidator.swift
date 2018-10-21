@@ -16,67 +16,85 @@ class TreeValidator {
         case root
     }
 
+    static func isNodeValueWithinFloorAndCeiling(node: Node, floor: Int, ceiling: Int) -> Bool {
+        return node.value > floor && node.value < ceiling
+    }
+
     /// - Parameters:
     ///   - tree: a node
     ///   - nodeType:
-    ///   - ancestorsMinValue: ignored if NodeType is .root
-    ///   - ancestorsMaxValue: ignored if NodeType is .root
+    ///   - floor: node value must be greater than min (reset whenever go right)
+    ///     ignored if nodeType is root
+    ///   - ceiling: node value must be less than max (reset whenever go left)
+    ///     ignored if nodeType is root
     /// - Returns: true if node is a valid binary search tree.
     ///   returns true if node is nil
-    static func isValid(tree: Node?, nodeType: NodeType, ancestorsMinValue: Int, ancestorsMaxValue: Int) -> Bool {
+    static func isValid(node: Node?,
+                        nodeType: NodeType,
+                        floor: Int,
+                        ceiling: Int) -> Bool {
 
-        guard let tree = tree else {
+        guard let node = node else {
             // node is nil, we define nil as a valid tree
-            // print("tree is nil, returning true")
+            print("node is nil, returning true")
             return true
         }
 
-        print("\(tree.description()), nodeType:\(nodeType), min:\(ancestorsMinValue), max:\(ancestorsMaxValue)")
+        print("\(node.description()), nodeType:\(nodeType), floor:\(floor), ceiling:\(ceiling)")
 
-
-        // assign placeholder value
-        var nextAncestorsMinValue = 0
-        var nextAncestorsMaxValue = 0
-
-        if nodeType == .root {
-            nextAncestorsMinValue = tree.value
-            nextAncestorsMaxValue = tree.value
-        } else {
-
-            nextAncestorsMinValue = min(tree.value, ancestorsMinValue)
-            nextAncestorsMaxValue = max(tree.value, ancestorsMaxValue)
-
-            if nodeType == .left {
-                // use >= to enforce tree node values are unique
-                if tree.value >= ancestorsMinValue {
-                    print("\(tree.description()) left returning false")
-                    return false
-                }
+        if let nodeLeft = node.left {
+            if nodeLeft.value >= node.value {
+                return false
             }
-
-            if nodeType == .right {
-                // use <= to enforce tree node values are unique
-                if tree.value <= ancestorsMaxValue {
-                    print("\(tree.description()) right returning false")
-                    return false
-                }
+            if !isNodeValueWithinFloorAndCeiling(node: nodeLeft, floor: floor, ceiling: ceiling) {
+                return false
             }
         }
 
-        let isLeftValid = isValid(tree: tree.left,
+        if let nodeRight = node.right {
+            if nodeRight.value <= node.value {
+                return false
+            }
+            if !isNodeValueWithinFloorAndCeiling(node: nodeRight, floor: floor, ceiling: ceiling) {
+                return false
+            }
+        }
+
+        // prepare for recursive calls by calculating nextFloor and nextCeiling
+        // start with previous values
+        var nextFloor = floor
+        var nextCeiling = ceiling
+
+        if nodeType == .root {
+            // root ignores arguments floor and ceiling
+            nextFloor = Int.min
+            nextCeiling = Int.max
+        } else if nodeType == .left {
+            nextCeiling = min(ceiling, node.value)
+        } else if nodeType == .right {
+            nextFloor = max(floor, node.value)
+        }
+
+        let isLeftValid = isValid(node: node.left,
                                   nodeType: .left,
-                                  ancestorsMinValue: nextAncestorsMinValue,
-                                  ancestorsMaxValue: nextAncestorsMaxValue)
+                                  floor: nextFloor,
+                                  ceiling: node.value)
+        print("\(node.description()) isLeftValid: \(isLeftValid)")
+        if !isLeftValid {
+            return false
+        }
 
-        let isRightValid = isValid(tree: tree.right,
+        let isRightValid = isValid(node: node.right,
                                    nodeType: .right,
-                                   ancestorsMinValue: nextAncestorsMinValue,
-                                   ancestorsMaxValue: nextAncestorsMaxValue)
+                                   floor: node.value,
+                                   ceiling: nextCeiling)
+        print("\(node.description()) isRightValid: \(isRightValid)")
+        if !isRightValid {
+            return false
+        }
 
-        let areBothSubtreesValid = isLeftValid && isRightValid
-
-        print("\(tree.description()) areBothSubtreesValid: \(areBothSubtreesValid)")
-        return areBothSubtreesValid
+        return true
     }
+
 
 }

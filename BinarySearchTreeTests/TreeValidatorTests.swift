@@ -21,9 +21,10 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertTrue(TreeValidator.isValid(tree: node, nodeType: .root,
-                                            ancestorsMinValue: 0,
-                                            ancestorsMaxValue: 0))
+        XCTAssertTrue(TreeValidator.isValid(node: node,
+                                            nodeType: .root,
+                                            floor: Int.min,
+                                            ceiling: Int.max))
     }
 
     func testTreeValidatorTree314() {
@@ -36,12 +37,12 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertTrue(TreeValidator.isValid(tree: node, nodeType: .root,
-                                            ancestorsMinValue: 0,
-                                            ancestorsMaxValue: 0))
+        XCTAssertTrue(TreeValidator.isValid(node: node,
+                                            nodeType: .root,
+                                            floor: Int.min,
+                                            ceiling: Int.max))
     }
 
-    // TODO: fix isValid so test passes
     func testTreeValidatorTree5381469() {
         let testBundle = Bundle(for: type(of: self))
 
@@ -52,9 +53,26 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertTrue(TreeValidator.isValid(tree: node, nodeType: .root,
-                                            ancestorsMinValue: 0,
-                                            ancestorsMaxValue: 0))
+        XCTAssertTrue(TreeValidator.isValid(node: node,
+                                            nodeType: .root,
+                                            floor: Int.min,
+                                            ceiling: Int.max))
+    }
+
+    func testTreeValidatorTree5381749() {
+        let testBundle = Bundle(for: type(of: self))
+
+        guard let node = TreeBuilder.tree(bundle: testBundle,
+                                          fileName: "tree5381749",
+                                          fileExtension: "json") else {
+                                            XCTFail()
+                                            return
+        }
+
+        XCTAssertFalse(TreeValidator.isValid(node: node,
+                                             nodeType: .root,
+                                             floor: Int.min,
+                                             ceiling: Int.max))
     }
 
 }
