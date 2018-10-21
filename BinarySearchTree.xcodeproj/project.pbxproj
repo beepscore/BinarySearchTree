@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE870617217C3EA700B8FB9E /* tree5381469.json in Resources */ = {isa = PBXBuildFile; fileRef = DE870616217C3EA700B8FB9E /* tree5381469.json */; };
+		DE870619217C3EBD00B8FB9E /* tree5381749.json in Resources */ = {isa = PBXBuildFile; fileRef = DE870618217C3EBD00B8FB9E /* tree5381749.json */; };
 		DEBE175E217BEFE400FEA566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE175D217BEFE400FEA566 /* AppDelegate.swift */; };
 		DEBE1760217BEFE400FEA566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE175F217BEFE400FEA566 /* ViewController.swift */; };
 		DEBE1763217BEFE400FEA566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBE1761217BEFE400FEA566 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		DE7ADBF2217BF3FA00E52EE0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DE870616217C3EA700B8FB9E /* tree5381469.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree5381469.json; sourceTree = "<group>"; };
+		DE870618217C3EBD00B8FB9E /* tree5381749.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree5381749.json; sourceTree = "<group>"; };
 		DEBE175A217BEFE400FEA566 /* BinarySearchTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinarySearchTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBE175D217BEFE400FEA566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEBE175F217BEFE400FEA566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,8 +162,10 @@
 		DEEB99D1217BF539006F5A4D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DEEB99D2217BF70B006F5A4D /* tree5.json */,
 				DEEB99E2217C229E006F5A4D /* tree314.json */,
+				DEEB99D2217BF70B006F5A4D /* tree5.json */,
+				DE870616217C3EA700B8FB9E /* tree5381469.json */,
+				DE870618217C3EBD00B8FB9E /* tree5381749.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE870617217C3EA700B8FB9E /* tree5381469.json in Resources */,
+				DE870619217C3EBD00B8FB9E /* tree5381749.json in Resources */,
 				DEEB99E3217C229E006F5A4D /* tree314.json in Resources */,
 				DEEB99D3217BF70B006F5A4D /* tree5.json in Resources */,
 			);
