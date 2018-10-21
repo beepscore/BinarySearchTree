@@ -42,6 +42,8 @@ class TreeValidator {
 
         print("\(node.description()), nodeType:\(nodeType), floor:\(floor), ceiling:\(ceiling)")
 
+        // use many separate conditionals for easier breakpoint debugging
+
         if let nodeLeft = node.left {
             if nodeLeft.value >= node.value {
                 return false
