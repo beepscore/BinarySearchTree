@@ -65,4 +65,33 @@ class NodeTests: XCTestCase {
         XCTAssertNil(node.right)
     }
 
+    func testDecodableTree314() {
+        let testBundle = Bundle(for: type(of: self))
+        guard let jsonString = FileUtils.string(bundle: testBundle, fileName: "tree314", fileExtension: "json") else {
+            XCTFail()
+            return
+        }
+
+        guard let jsonData = jsonString.data(using: .utf8) else {
+            XCTFail()
+            return
+        }
+
+        let decoder = JSONDecoder()
+        guard let node = try? decoder.decode(Node.self, from: jsonData) else {
+            XCTFail()
+            return
+        }
+
+        XCTAssertNotNil(node)
+        XCTAssertEqual(node.value, 3)
+        XCTAssertEqual(node.left?.value, 1)
+        XCTAssertEqual(node.right?.value, 4)
+        
+        XCTAssertNil(node.left?.left)
+        XCTAssertNil(node.left?.right)
+        XCTAssertNil(node.right?.left)
+        XCTAssertNil(node.right?.right)
+    }
+
 }
