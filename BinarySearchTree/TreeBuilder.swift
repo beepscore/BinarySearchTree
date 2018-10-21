@@ -10,6 +10,12 @@ import Foundation
 
 class TreeBuilder {
     
+    /// - Parameters:
+    ///   - bundle: typically unit test bundle
+    ///   - fileName: name of data file
+    ///   - fileExtension: typically .json
+    /// - Returns: a tree of nodes matching structure in file json text.
+    ///            The tree may or may not be a valid binary search tree
     static func tree(bundle: Bundle, fileName: String, fileExtension: String) -> Node? {
         
         guard let jsonString = FileUtils.string(bundle: bundle,
