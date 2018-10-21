@@ -19,6 +19,7 @@ Assume a BST is defined as follows:
 all nodes are unique
 
 Input:
+
          5
        /   \
       3     8
@@ -28,6 +29,7 @@ Output: true
 
 
 Input:
+
          5
        /   \
       3     8
