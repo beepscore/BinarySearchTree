@@ -19,6 +19,10 @@ class Node: Equatable, Decodable {
         self.right = right
     }
 
+    func hasNoChildren() -> Bool {
+        return left == nil && right == nil
+    }
+
     // TODO: consider may prefer to add a method "isEqual(node: Node)"
     // rather than conform to Equatable and override "=="
     static func == (lhs: Node, rhs: Node) -> Bool {
