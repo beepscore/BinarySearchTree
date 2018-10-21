@@ -30,5 +30,8 @@ class Node: Equatable, Decodable {
         return isEqual
     }
 
+    func description() -> String {
+        return "value:\(self.value), left:\(String(describing: left?.value)), right:\(String(describing: right?.value))"
+    }
 
 }
