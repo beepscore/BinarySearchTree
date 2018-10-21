@@ -106,12 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				DEBE175D217BEFE400FEA566 /* AppDelegate.swift */,
-				DEBE175F217BEFE400FEA566 /* ViewController.swift */,
-				DEBE1761217BEFE400FEA566 /* Main.storyboard */,
 				DEBE1764217BEFE500FEA566 /* Assets.xcassets */,
-				DEBE1766217BEFE500FEA566 /* LaunchScreen.storyboard */,
 				DEBE1769217BEFE500FEA566 /* Info.plist */,
+				DEBE1766217BEFE500FEA566 /* LaunchScreen.storyboard */,
+				DEBE1761217BEFE400FEA566 /* Main.storyboard */,
 				DEEB99D4217BF76C006F5A4D /* Node.swift */,
+				DEBE175F217BEFE400FEA566 /* ViewController.swift */,
 			);
 			path = BinarySearchTree;
 			sourceTree = "<group>";
@@ -119,8 +119,8 @@
 		DEBE1771217BEFE600FEA566 /* BinarySearchTreeTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEEB99D1217BF539006F5A4D /* Data */,
 				DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */,
+				DEEB99D1217BF539006F5A4D /* Data */,
 				DEBE1774217BEFE600FEA566 /* Info.plist */,
 			);
 			path = BinarySearchTreeTests;
