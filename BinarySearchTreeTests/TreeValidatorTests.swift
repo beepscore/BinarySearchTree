@@ -11,6 +11,21 @@ import XCTest
 
 class TreeValidatorTests: XCTestCase {
 
+    func testTreeValidatorTree5() {
+        let testBundle = Bundle(for: type(of: self))
+
+        guard let node = TreeBuilder.tree(bundle: testBundle,
+                                          fileName: "tree5",
+                                          fileExtension: "json") else {
+                                            XCTFail()
+                                            return
+        }
+
+        XCTAssertTrue(TreeValidator.isValid(tree: node, nodeType: .root,
+                                            ancestorsMinValue: 0,
+                                            ancestorsMaxValue: 0))
+    }
+
     func testTreeValidatorTree314() {
         let testBundle = Bundle(for: type(of: self))
 
