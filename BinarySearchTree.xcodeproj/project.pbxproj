@@ -12,7 +12,6 @@
 		DEBE1763217BEFE400FEA566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBE1761217BEFE400FEA566 /* Main.storyboard */; };
 		DEBE1765217BEFE500FEA566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEBE1764217BEFE500FEA566 /* Assets.xcassets */; };
 		DEBE1768217BEFE500FEA566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBE1766217BEFE500FEA566 /* LaunchScreen.storyboard */; };
-		DEBE1773217BEFE600FEA566 /* BinarySearchTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */; };
 		DEBE177E217BEFE600FEA566 /* BinarySearchTreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE177D217BEFE600FEA566 /* BinarySearchTreeUITests.swift */; };
 		DEEB99D3217BF70B006F5A4D /* tree5.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEB99D2217BF70B006F5A4D /* tree5.json */; };
 		DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99D4217BF76C006F5A4D /* Node.swift */; };
@@ -48,7 +47,6 @@
 		DEBE1767217BEFE500FEA566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEBE1769217BEFE500FEA566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEBE176E217BEFE600FEA566 /* BinarySearchTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinarySearchTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeTests.swift; sourceTree = "<group>"; };
 		DEBE1774217BEFE600FEA566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEBE1779217BEFE600FEA566 /* BinarySearchTreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinarySearchTreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBE177D217BEFE600FEA566 /* BinarySearchTreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeUITests.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		DEBE1771217BEFE600FEA566 /* BinarySearchTreeTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */,
 				DEEB99D1217BF539006F5A4D /* Data */,
 				DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */,
 				DEBE1774217BEFE600FEA566 /* Info.plist */,
@@ -295,7 +292,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEBE1773217BEFE600FEA566 /* BinarySearchTreeTests.swift in Sources */,
 				DEEB99D7217BF9E3006F5A4D /* TestNode.swift in Sources */,
 				DEEB99DF217C16CB006F5A4D /* FileUtilsTests.swift in Sources */,
 			);
