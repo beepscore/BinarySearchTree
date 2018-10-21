@@ -19,4 +19,13 @@ class TestNode: XCTestCase {
         XCTAssertNil(node.right)
     }
 
+    func testInitNodeWithLeft() {
+        let left = Node(value: 3, left: nil, right: nil)
+        let node = Node(value: 5, left: left, right: nil)
+        XCTAssertNotNil(node)
+        XCTAssertEqual(node.value, 5)
+        XCTAssertEqual(node.left, left)
+        XCTAssertNil(node.right)
+    }
+
 }

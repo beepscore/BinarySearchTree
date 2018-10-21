@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Node {
+class Node: Equatable {
     var value: Int
     var left: Node?
     var right: Node?
@@ -18,4 +18,16 @@ class Node {
         self.left = left
         self.right = right
     }
+
+    // TODO: consider may prefer to add a method "isEqual(node: Node)"
+    // rather than conform to Equatable and override "=="
+    static func == (lhs: Node, rhs: Node) -> Bool {
+
+        let isEqual = ((lhs.value == rhs.value)
+            && (lhs.left == rhs.left)
+            && (lhs.right == rhs.right))
+
+        return isEqual
+    }
+
 }
