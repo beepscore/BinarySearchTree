@@ -14,6 +14,8 @@
 		DEBE1768217BEFE500FEA566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBE1766217BEFE500FEA566 /* LaunchScreen.storyboard */; };
 		DEBE1773217BEFE600FEA566 /* BinarySearchTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */; };
 		DEBE177E217BEFE600FEA566 /* BinarySearchTreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE177D217BEFE600FEA566 /* BinarySearchTreeUITests.swift */; };
+		DEEB99D3217BF70B006F5A4D /* tree5.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEB99D2217BF70B006F5A4D /* tree5.json */; };
+		DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99D4217BF76C006F5A4D /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		DEBE177D217BEFE600FEA566 /* BinarySearchTreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTreeUITests.swift; sourceTree = "<group>"; };
 		DEBE177F217BEFE600FEA566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEBE178B217BF1AB00FEA566 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DEEB99D2217BF70B006F5A4D /* tree5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree5.json; sourceTree = "<group>"; };
+		DEEB99D4217BF76C006F5A4D /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				DEBE1764217BEFE500FEA566 /* Assets.xcassets */,
 				DEBE1766217BEFE500FEA566 /* LaunchScreen.storyboard */,
 				DEBE1769217BEFE500FEA566 /* Info.plist */,
+				DEEB99D4217BF76C006F5A4D /* Node.swift */,
 			);
 			path = BinarySearchTree;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 		DEBE1771217BEFE600FEA566 /* BinarySearchTreeTests */ = {
 			isa = PBXGroup;
 			children = (
+				DEEB99D1217BF539006F5A4D /* Data */,
 				DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */,
 				DEBE1774217BEFE600FEA566 /* Info.plist */,
 			);
@@ -127,6 +133,14 @@
 				DEBE177F217BEFE600FEA566 /* Info.plist */,
 			);
 			path = BinarySearchTreeUITests;
+			sourceTree = "<group>";
+		};
+		DEEB99D1217BF539006F5A4D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DEEB99D2217BF70B006F5A4D /* tree5.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEEB99D3217BF70B006F5A4D /* tree5.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */,
 				DEBE1760217BEFE400FEA566 /* ViewController.swift in Sources */,
 				DEBE175E217BEFE400FEA566 /* AppDelegate.swift in Sources */,
 			);
