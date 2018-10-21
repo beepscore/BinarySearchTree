@@ -19,17 +19,19 @@ Assume a BST is defined as follows:
 all nodes are unique
 
 Input:
-     5
-   /   \
-  3     8
- 1 4  6  9
+         5
+       /   \
+      3     8
+     1 4  6  9
+
 Output: true
 
+
 Input:
-     5
-   /   \
-  3     8
- 1 7  4  9
+         5
+       /   \
+      3     8
+     1 7  4  9
 Output: false
 
 enum TreeType {
