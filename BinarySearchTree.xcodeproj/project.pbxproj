@@ -20,6 +20,9 @@
 		DEEB99DF217C16CB006F5A4D /* FileUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */; };
 		DEEB99E3217C229E006F5A4D /* tree314.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEB99E2217C229E006F5A4D /* tree314.json */; };
 		DEEB99E5217C25BE006F5A4D /* TreeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99E4217C25BE006F5A4D /* TreeValidator.swift */; };
+		DEEB99E7217C2AB1006F5A4D /* TreeValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99E6217C2AB1006F5A4D /* TreeValidatorTests.swift */; };
+		DEEB99E9217C2B76006F5A4D /* TreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99E8217C2B76006F5A4D /* TreeBuilder.swift */; };
+		DEEB99EB217C2D34006F5A4D /* TreeBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99EA217C2D34006F5A4D /* TreeBuilderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilsTests.swift; sourceTree = "<group>"; };
 		DEEB99E2217C229E006F5A4D /* tree314.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree314.json; sourceTree = "<group>"; };
 		DEEB99E4217C25BE006F5A4D /* TreeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeValidator.swift; sourceTree = "<group>"; };
+		DEEB99E6217C2AB1006F5A4D /* TreeValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeValidatorTests.swift; sourceTree = "<group>"; };
+		DEEB99E8217C2B76006F5A4D /* TreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeBuilder.swift; sourceTree = "<group>"; };
+		DEEB99EA217C2D34006F5A4D /* TreeBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeBuilderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 				DEBE1761217BEFE400FEA566 /* Main.storyboard */,
 				DEEB99D4217BF76C006F5A4D /* Node.swift */,
 				DEBE175F217BEFE400FEA566 /* ViewController.swift */,
+				DEEB99E8217C2B76006F5A4D /* TreeBuilder.swift */,
 				DEEB99E4217C25BE006F5A4D /* TreeValidator.swift */,
 			);
 			path = BinarySearchTree;
@@ -133,6 +140,8 @@
 				DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */,
 				DEBE1774217BEFE600FEA566 /* Info.plist */,
 				DEEB99D6217BF9E3006F5A4D /* NodeTests.swift */,
+				DEEB99EA217C2D34006F5A4D /* TreeBuilderTests.swift */,
+				DEEB99E6217C2AB1006F5A4D /* TreeValidatorTests.swift */,
 			);
 			path = BinarySearchTreeTests;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */,
+				DEEB99E9217C2B76006F5A4D /* TreeBuilder.swift in Sources */,
 				DEBE1760217BEFE400FEA566 /* ViewController.swift in Sources */,
 				DEEB99E5217C25BE006F5A4D /* TreeValidator.swift in Sources */,
 				DEBE175E217BEFE400FEA566 /* AppDelegate.swift in Sources */,
@@ -300,8 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEEB99E7217C2AB1006F5A4D /* TreeValidatorTests.swift in Sources */,
 				DEEB99D7217BF9E3006F5A4D /* NodeTests.swift in Sources */,
 				DEEB99DF217C16CB006F5A4D /* FileUtilsTests.swift in Sources */,
+				DEEB99EB217C2D34006F5A4D /* TreeBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

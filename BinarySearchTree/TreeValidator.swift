@@ -16,6 +16,13 @@ class TreeValidator {
         case root
     }
 
+    /// - Parameters:
+    ///   - tree: a node
+    ///   - nodeType:
+    ///   - ancestorsMinValue: ignored if NodeType is .root
+    ///   - ancestorsMaxValue: ignored if NodeType is .root
+    /// - Returns: true if node is a valid binary search tree.
+    ///   returns true if node is nil
     static func isValid(tree: Node?, nodeType: NodeType, ancestorsMinValue: Int, ancestorsMaxValue: Int) -> Bool {
 
         guard let tree = tree else {
@@ -23,20 +30,28 @@ class TreeValidator {
             return true
         }
 
-        switch nodeType {
-        case .root:
-            // root has no ancestors
-            break
-        case .left:
-            // use >= to enforce tree node values are unique
-            if tree.value >= ancestorsMinValue { return false }
-        case .right:
-            // use <= to enforce tree node values are unique
-            if tree.value <= ancestorsMaxValue { return false }
-        }
+        // assign placeholder value
+        var nextAncestorsMinValue = 0
+        var nextAncestorsMaxValue = 0
 
-        let nextAncestorsMinValue = min(tree.value, ancestorsMinValue)
-        let nextAncestorsMaxValue = max(tree.value, ancestorsMaxValue)
+        if nodeType == .root {
+            nextAncestorsMinValue = tree.value
+            nextAncestorsMaxValue = tree.value
+        } else {
+
+            nextAncestorsMinValue = min(tree.value, ancestorsMinValue)
+            nextAncestorsMaxValue = max(tree.value, ancestorsMaxValue)
+
+            if nodeType == .left {
+                // use >= to enforce tree node values are unique
+                if tree.value >= ancestorsMinValue { return false }
+            }
+
+            if nodeType == .right {
+                // use <= to enforce tree node values are unique
+                if tree.value <= ancestorsMaxValue { return false }
+            }
+        }
 
         let areBothSubtreesValid = isValid(tree: tree.left,
                                            nodeType: .left,
