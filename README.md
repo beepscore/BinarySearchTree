@@ -2,7 +2,8 @@
 Build binary trees, add methods to check if they are valid binary search trees.
 
 # References
-write app without referencing any sources except for Appendix- notes.
+Write app without referencing any sources related to trees except for Appendix- notes.
+May reference outside sources for other topics such as reading a file, using json Codable.
 
 ## Appendix- notes
 
