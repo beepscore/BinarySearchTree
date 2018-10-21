@@ -16,6 +16,7 @@
 		DEBE177E217BEFE600FEA566 /* BinarySearchTreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE177D217BEFE600FEA566 /* BinarySearchTreeUITests.swift */; };
 		DEEB99D3217BF70B006F5A4D /* tree5.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEB99D2217BF70B006F5A4D /* tree5.json */; };
 		DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99D4217BF76C006F5A4D /* Node.swift */; };
+		DEEB99D7217BF9E3006F5A4D /* TestNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99D6217BF9E3006F5A4D /* TestNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DEBE178B217BF1AB00FEA566 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DEEB99D2217BF70B006F5A4D /* tree5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree5.json; sourceTree = "<group>"; };
 		DEEB99D4217BF76C006F5A4D /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		DEEB99D6217BF9E3006F5A4D /* TestNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */,
 				DEEB99D1217BF539006F5A4D /* Data */,
 				DEBE1774217BEFE600FEA566 /* Info.plist */,
+				DEEB99D6217BF9E3006F5A4D /* TestNode.swift */,
 			);
 			path = BinarySearchTreeTests;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEBE1773217BEFE600FEA566 /* BinarySearchTreeTests.swift in Sources */,
+				DEEB99D7217BF9E3006F5A4D /* TestNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
