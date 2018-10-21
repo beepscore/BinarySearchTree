@@ -1,1 +1,4 @@
-{ "value": 3, "left": { "value": 1, "left": null, "right": null }, "right": { "value": 4, "left": null, "right": null } }
+{ "value": 3,
+    "left": { "value": 1, "left": null, "right": null },
+    "right": { "value": 4, "left": null, "right": null }
+}
