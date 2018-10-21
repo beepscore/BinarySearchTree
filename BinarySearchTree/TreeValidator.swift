@@ -27,8 +27,12 @@ class TreeValidator {
 
         guard let tree = tree else {
             // node is nil, we define nil as a valid tree
+            // print("tree is nil, returning true")
             return true
         }
+
+        print("\(tree.description()), nodeType:\(nodeType), min:\(ancestorsMinValue), max:\(ancestorsMaxValue)")
+
 
         // assign placeholder value
         var nextAncestorsMinValue = 0
@@ -44,24 +48,34 @@ class TreeValidator {
 
             if nodeType == .left {
                 // use >= to enforce tree node values are unique
-                if tree.value >= ancestorsMinValue { return false }
+                if tree.value >= ancestorsMinValue {
+                    print("\(tree.description()) left returning false")
+                    return false
+                }
             }
 
             if nodeType == .right {
                 // use <= to enforce tree node values are unique
-                if tree.value <= ancestorsMaxValue { return false }
+                if tree.value <= ancestorsMaxValue {
+                    print("\(tree.description()) right returning false")
+                    return false
+                }
             }
         }
 
-        let areBothSubtreesValid = isValid(tree: tree.left,
-                                           nodeType: .left,
-                                           ancestorsMinValue: nextAncestorsMinValue,
-                                           ancestorsMaxValue: nextAncestorsMaxValue)
-            && isValid(tree: tree.right,
-                       nodeType: .right,
-                       ancestorsMinValue: nextAncestorsMinValue,
-                       ancestorsMaxValue: nextAncestorsMaxValue)
+        let isLeftValid = isValid(tree: tree.left,
+                                  nodeType: .left,
+                                  ancestorsMinValue: nextAncestorsMinValue,
+                                  ancestorsMaxValue: nextAncestorsMaxValue)
 
+        let isRightValid = isValid(tree: tree.right,
+                                   nodeType: .right,
+                                   ancestorsMinValue: nextAncestorsMinValue,
+                                   ancestorsMaxValue: nextAncestorsMaxValue)
+
+        let areBothSubtreesValid = isLeftValid && isRightValid
+
+        print("\(tree.description()) areBothSubtreesValid: \(areBothSubtreesValid)")
         return areBothSubtreesValid
     }
 
