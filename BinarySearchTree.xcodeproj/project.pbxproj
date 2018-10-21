@@ -19,6 +19,7 @@
 		DEEB99DD217C046E006F5A4D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99DC217C046E006F5A4D /* FileUtils.swift */; };
 		DEEB99DF217C16CB006F5A4D /* FileUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */; };
 		DEEB99E3217C229E006F5A4D /* tree314.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEB99E2217C229E006F5A4D /* tree314.json */; };
+		DEEB99E5217C25BE006F5A4D /* TreeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99E4217C25BE006F5A4D /* TreeValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		DEEB99DC217C046E006F5A4D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilsTests.swift; sourceTree = "<group>"; };
 		DEEB99E2217C229E006F5A4D /* tree314.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree314.json; sourceTree = "<group>"; };
+		DEEB99E4217C25BE006F5A4D /* TreeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				DEBE1761217BEFE400FEA566 /* Main.storyboard */,
 				DEEB99D4217BF76C006F5A4D /* Node.swift */,
 				DEBE175F217BEFE400FEA566 /* ViewController.swift */,
+				DEEB99E4217C25BE006F5A4D /* TreeValidator.swift */,
 			);
 			path = BinarySearchTree;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */,
 				DEBE1760217BEFE400FEA566 /* ViewController.swift in Sources */,
+				DEEB99E5217C25BE006F5A4D /* TreeValidator.swift in Sources */,
 				DEBE175E217BEFE400FEA566 /* AppDelegate.swift in Sources */,
 				DEEB99DD217C046E006F5A4D /* FileUtils.swift in Sources */,
 			);
