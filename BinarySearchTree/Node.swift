@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Node: Equatable {
+class Node: Equatable, Decodable {
     var value: Int
     var left: Node?
     var right: Node?
@@ -29,5 +29,6 @@ class Node: Equatable {
 
         return isEqual
     }
+
 
 }
