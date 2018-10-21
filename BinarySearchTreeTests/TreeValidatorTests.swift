@@ -75,4 +75,20 @@ class TreeValidatorTests: XCTestCase {
                                              ceiling: Int.max))
     }
 
+    func testTreeValidatorTreeValidBST4Levels() {
+        let testBundle = Bundle(for: type(of: self))
+
+        guard let node = TreeBuilder.tree(bundle: testBundle,
+                                          fileName: "treeValidBST4Levels",
+                                          fileExtension: "json") else {
+                                            XCTFail()
+                                            return
+        }
+
+        XCTAssertTrue(TreeValidator.isValid(node: node,
+                                             nodeType: .root,
+                                             floor: Int.min,
+                                             ceiling: Int.max))
+    }
+
 }

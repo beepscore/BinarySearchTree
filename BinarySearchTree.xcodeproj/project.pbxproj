@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE026C42217D17C800866825 /* treeValidBST4Levels.json in Resources */ = {isa = PBXBuildFile; fileRef = DE026C41217D17C800866825 /* treeValidBST4Levels.json */; };
 		DE870617217C3EA700B8FB9E /* tree5381469.json in Resources */ = {isa = PBXBuildFile; fileRef = DE870616217C3EA700B8FB9E /* tree5381469.json */; };
 		DE870619217C3EBD00B8FB9E /* tree5381749.json in Resources */ = {isa = PBXBuildFile; fileRef = DE870618217C3EBD00B8FB9E /* tree5381749.json */; };
 		DEBE175E217BEFE400FEA566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBE175D217BEFE400FEA566 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE026C41217D17C800866825 /* treeValidBST4Levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = treeValidBST4Levels.json; sourceTree = "<group>"; };
 		DE7ADBF2217BF3FA00E52EE0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DE870616217C3EA700B8FB9E /* tree5381469.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree5381469.json; sourceTree = "<group>"; };
 		DE870618217C3EBD00B8FB9E /* tree5381749.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree5381749.json; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				DEEB99D2217BF70B006F5A4D /* tree5.json */,
 				DE870616217C3EA700B8FB9E /* tree5381469.json */,
 				DE870618217C3EBD00B8FB9E /* tree5381749.json */,
+				DE026C41217D17C800866825 /* treeValidBST4Levels.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE026C42217D17C800866825 /* treeValidBST4Levels.json in Resources */,
 				DE870617217C3EA700B8FB9E /* tree5381469.json in Resources */,
 				DE870619217C3EBD00B8FB9E /* tree5381749.json in Resources */,
 				DEEB99E3217C229E006F5A4D /* tree314.json in Resources */,
