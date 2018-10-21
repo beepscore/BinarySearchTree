@@ -17,6 +17,8 @@
 		DEEB99D3217BF70B006F5A4D /* tree5.json in Resources */ = {isa = PBXBuildFile; fileRef = DEEB99D2217BF70B006F5A4D /* tree5.json */; };
 		DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99D4217BF76C006F5A4D /* Node.swift */; };
 		DEEB99D7217BF9E3006F5A4D /* TestNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99D6217BF9E3006F5A4D /* TestNode.swift */; };
+		DEEB99DD217C046E006F5A4D /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99DC217C046E006F5A4D /* FileUtils.swift */; };
+		DEEB99DF217C16CB006F5A4D /* FileUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		DEEB99D2217BF70B006F5A4D /* tree5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tree5.json; sourceTree = "<group>"; };
 		DEEB99D4217BF76C006F5A4D /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		DEEB99D6217BF9E3006F5A4D /* TestNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNode.swift; sourceTree = "<group>"; };
+		DEEB99DC217C046E006F5A4D /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			children = (
 				DEBE175D217BEFE400FEA566 /* AppDelegate.swift */,
 				DEBE1764217BEFE500FEA566 /* Assets.xcassets */,
+				DEEB99DC217C046E006F5A4D /* FileUtils.swift */,
 				DEBE1769217BEFE500FEA566 /* Info.plist */,
 				DEBE1766217BEFE500FEA566 /* LaunchScreen.storyboard */,
 				DEBE1761217BEFE400FEA566 /* Main.storyboard */,
@@ -123,6 +128,7 @@
 			children = (
 				DEBE1772217BEFE600FEA566 /* BinarySearchTreeTests.swift */,
 				DEEB99D1217BF539006F5A4D /* Data */,
+				DEEB99DE217C16CB006F5A4D /* FileUtilsTests.swift */,
 				DEBE1774217BEFE600FEA566 /* Info.plist */,
 				DEEB99D6217BF9E3006F5A4D /* TestNode.swift */,
 			);
@@ -281,6 +287,7 @@
 				DEEB99D5217BF76C006F5A4D /* Node.swift in Sources */,
 				DEBE1760217BEFE400FEA566 /* ViewController.swift in Sources */,
 				DEBE175E217BEFE400FEA566 /* AppDelegate.swift in Sources */,
+				DEEB99DD217C046E006F5A4D /* FileUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +297,7 @@
 			files = (
 				DEBE1773217BEFE600FEA566 /* BinarySearchTreeTests.swift in Sources */,
 				DEEB99D7217BF9E3006F5A4D /* TestNode.swift in Sources */,
+				DEEB99DF217C16CB006F5A4D /* FileUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
