@@ -28,4 +28,17 @@ class TestNode: XCTestCase {
         XCTAssertNil(node.right)
     }
 
+    func testEquatable() {
+        let child0 = Node(value: 3, left: nil, right: nil)
+        let child1 = Node(value: 3, left: nil, right: nil)
+
+        var parent0 = Node(value: 5, left: child0, right: nil)
+        var parent1 = Node(value: 5, left: child1, right: nil)
+        XCTAssertEqual(parent1, parent0)
+
+        parent0 = Node(value: 5, left: nil, right: child0)
+        parent1 = Node(value: 5, left: nil, right: nil)
+        XCTAssertNotEqual(parent1, parent0)
+    }
+
 }
