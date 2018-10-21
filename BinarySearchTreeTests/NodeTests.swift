@@ -1,5 +1,5 @@
 //
-//  TestNode.swift
+//  NodeTests.swift
 //  BinarySearchTreeTests
 //
 //  Created by Steve Baker on 10/20/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import BinarySearchTree
 
-class TestNode: XCTestCase {
+class NodeTests: XCTestCase {
 
     func testInitNoChildren() {
         let node = Node(value: 5, left: nil, right: nil)
