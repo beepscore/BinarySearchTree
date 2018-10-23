@@ -62,28 +62,16 @@ class TreeValidator {
             }
         }
 
-        // prepare for recursive calls by calculating nextFloor and nextCeiling
-        // start with previous values
-        var nextFloor = floor
-        var nextCeiling = ceiling
-
-        if nodeType == .root {
-            // root ignores arguments floor and ceiling
-            nextFloor = Int.min
-            nextCeiling = Int.max
-        } else if nodeType == .left {
-            // may lower the ceiling
-            nextCeiling = min(ceiling, node.value)
-        } else if nodeType == .right {
-            // may raise the floor
-            nextFloor = max(floor, node.value)
-        }
+        let nextLimits = nextFloorNextCeiling(node: node,
+                                              nodeType: nodeType,
+                                              floor: floor,
+                                              ceiling: ceiling)
 
         // check left and right subtrees
         
         let isLeftValid = isValid(node: node.left,
                                   nodeType: .left,
-                                  floor: nextFloor,
+                                  floor: nextLimits.nextFloor,
                                   ceiling: node.value)
         print("\(node.description()) isLeftValid: \(isLeftValid)")
         if !isLeftValid {
@@ -93,7 +81,7 @@ class TreeValidator {
         let isRightValid = isValid(node: node.right,
                                    nodeType: .right,
                                    floor: node.value,
-                                   ceiling: nextCeiling)
+                                   ceiling: nextLimits.nextCeiling)
         print("\(node.description()) isRightValid: \(isRightValid)")
         if !isRightValid {
             return false
@@ -102,5 +90,32 @@ class TreeValidator {
         return true
     }
 
+    /// prepares for recursive calls by calculating nextFloor and nextCeiling
+    /// - Returns: named tuple (nextFloor, nextCeiling)
+    static func nextFloorNextCeiling(node: Node,
+                                     nodeType: NodeType,
+                                     floor: Int,
+                                     ceiling: Int) -> (nextFloor: Int, nextCeiling: Int) {
+
+        // start with previous values
+        var nextFloor = floor
+        var nextCeiling = ceiling
+
+        if nodeType == .root {
+            // root ignores arguments floor and ceiling
+            nextFloor = Int.min
+            nextCeiling = Int.max
+
+        } else if nodeType == .left {
+            // may lower the ceiling
+            nextCeiling = min(ceiling, node.value)
+
+        } else if nodeType == .right {
+            // may raise the floor
+            nextFloor = max(floor, node.value)
+        }
+
+        return (nextFloor, nextCeiling)
+    }
 
 }
