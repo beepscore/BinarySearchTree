@@ -72,11 +72,15 @@ class TreeValidator {
             nextFloor = Int.min
             nextCeiling = Int.max
         } else if nodeType == .left {
+            // may lower the ceiling
             nextCeiling = min(ceiling, node.value)
         } else if nodeType == .right {
+            // may raise the floor
             nextFloor = max(floor, node.value)
         }
 
+        // check left and right subtrees
+        
         let isLeftValid = isValid(node: node.left,
                                   nodeType: .left,
                                   floor: nextFloor,
