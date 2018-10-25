@@ -16,6 +16,11 @@ class TreeValidator {
         case root
     }
 
+    /// - Parameters:
+    ///   - node:
+    ///   - floor: node value must be greater than floor.
+    ///   - ceiling: node value must be less than ceiling.
+    /// - Returns: true if node value is greater than floor and less than ceiling
     static func isNodeValueWithinFloorAndCeiling(node: Node, floor: Int, ceiling: Int) -> Bool {
         return node.value > floor && node.value < ceiling
     }
@@ -23,13 +28,13 @@ class TreeValidator {
     /// - Parameters:
     ///   - tree: a node
     ///   - nodeType:
-    ///   - floor: node value must be greater than ceiling.
-    ///     The value of the nearest ancestor that contains node in its right subtree.
-    ///     (reset whenever go right)
+    ///   - floor: node value must be greater than floor.
+    ///     The value of node's nearest ancestor that contains node in its right subtree.
+    ///     (reset whenever go path branches right)
     ///     ignored if nodeType is root
     ///   - ceiling: node value must be less than ceiling.
-    ///     The value of the nearest ancestor that contains node in its left subtree.
-    ///     (reset whenever go left)
+    ///     The value of node's nearest ancestor that contains node in its left subtree.
+    ///     (reset whenever path branches left)
     ///     ignored if nodeType is root
     /// - Returns: true if node is a valid binary search tree.
     ///   returns true if node is nil
