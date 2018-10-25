@@ -25,21 +25,22 @@ class TreeValidator {
         return true
     }
 
+    /// Checks if a node represents a valid binary search tree.
+    /// When calling with a root node,
+    /// caller should explicitly specify floor nil and ceiling nil or let them default to nil
     /// - Parameters:
     ///   - tree: a node
     ///   - floor: node value must be greater than floor.
     ///     The value of node's nearest ancestor that contains node in its right subtree.
     ///     (reset to node's parent value whenever branch right)
-    ///     if node is root, caller should supply nil
     ///     ignored if nil
     ///   - ceiling: node value must be less than ceiling.
     ///     The value of node's nearest ancestor that contains node in its left subtree.
     ///     (reset to node's parent value whenever branch left)
-    ///     if node is root, caller should supply nil
     ///     ignored if nil
     /// - Returns: true if node is a valid binary search tree.
     ///   returns true if node is nil
-    static func isValid(node: Node?, floor: Int?, ceiling: Int?) -> Bool {
+    static func isValid(node: Node?, floor: Int? = nil, ceiling: Int? = nil) -> Bool {
 
         print("\(String(describing: node?.description())), floor:\(String(describing: floor)), ceiling:\(String(describing: ceiling))")
 

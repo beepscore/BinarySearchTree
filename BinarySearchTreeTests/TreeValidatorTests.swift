@@ -21,9 +21,8 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertTrue(TreeValidator.isValid(node: node,
-                                            floor: nil,
-                                            ceiling: nil))
+        // root node, explicitly specify floor and ceiling nil
+        XCTAssertTrue(TreeValidator.isValid(node: node, floor: nil, ceiling: nil))
     }
 
     func testTreeValidatorTree314() {
@@ -36,9 +35,8 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertTrue(TreeValidator.isValid(node: node,
-                                            floor: nil,
-                                            ceiling: nil))
+        // root node, use default nil for floor and ceiling
+        XCTAssertTrue(TreeValidator.isValid(node: node))
     }
 
     func testTreeValidatorTree5381469() {
@@ -51,9 +49,7 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertTrue(TreeValidator.isValid(node: node,
-                                            floor: nil,
-                                            ceiling: nil))
+        XCTAssertTrue(TreeValidator.isValid(node: node))
     }
 
     func testTreeValidatorTree5381749() {
@@ -66,9 +62,7 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertFalse(TreeValidator.isValid(node: node,
-                                             floor: nil,
-                                             ceiling: nil))
+        XCTAssertFalse(TreeValidator.isValid(node: node))
     }
 
     func testTreeValidatorTreeValidBST4Levels() {
@@ -81,9 +75,7 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertTrue(TreeValidator.isValid(node: node,
-                                             floor: nil,
-                                             ceiling: nil))
+        XCTAssertTrue(TreeValidator.isValid(node: node))
     }
 
     func testTreeValidatorTreeInvalidBST4Levels() {
@@ -96,9 +88,7 @@ class TreeValidatorTests: XCTestCase {
                                             return
         }
 
-        XCTAssertFalse(TreeValidator.isValid(node: node,
-                                            floor: nil,
-                                            ceiling: nil))
+        XCTAssertFalse(TreeValidator.isValid(node: node))
     }
 
 }
