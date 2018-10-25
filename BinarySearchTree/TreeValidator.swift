@@ -10,40 +10,38 @@ import Foundation
 
 class TreeValidator {
 
-    enum NodeType {
-        case left
-        case right
-        case root
-    }
-
     /// - Parameters:
     ///   - node:
-    ///   - floor: node value must be greater than floor.
-    ///   - ceiling: node value must be less than ceiling.
+    ///   - floor: if not nil, node value must be greater than floor. ignored if nil.
+    ///   - ceiling: if not nil, node value must be less than ceiling. ignored if nil.
     /// - Returns: true if node value is greater than floor and less than ceiling
-    static func isNodeValueWithinFloorAndCeiling(node: Node, floor: Int, ceiling: Int) -> Bool {
-        return node.value > floor && node.value < ceiling
+    static func isNodeValueWithinFloorAndCeiling(node: Node, floor: Int?, ceiling: Int?) -> Bool {
+        if let floorUnwrapped = floor {
+            if node.value <= floorUnwrapped { return false }
+        }
+        if let ceilingUnwrapped = ceiling {
+            if node.value >= ceilingUnwrapped { return false }
+        }
+        return true
     }
 
     /// - Parameters:
     ///   - tree: a node
-    ///   - nodeType:
     ///   - floor: node value must be greater than floor.
     ///     The value of node's nearest ancestor that contains node in its right subtree.
     ///     (reset to node's parent value whenever branch right)
-    ///     ignored if nodeType is root
+    ///     if node is root, caller should supply nil
+    ///     ignored if nil
     ///   - ceiling: node value must be less than ceiling.
     ///     The value of node's nearest ancestor that contains node in its left subtree.
     ///     (reset to node's parent value whenever branch left)
-    ///     ignored if nodeType is root
+    ///     if node is root, caller should supply nil
+    ///     ignored if nil
     /// - Returns: true if node is a valid binary search tree.
     ///   returns true if node is nil
-    static func isValid(node: Node?,
-                        nodeType: NodeType,
-                        floor: Int,
-                        ceiling: Int) -> Bool {
+    static func isValid(node: Node?, floor: Int?, ceiling: Int?) -> Bool {
 
-        print("\(String(describing: node?.description())), nodeType:\(nodeType), floor:\(floor), ceiling:\(ceiling)")
+        print("\(String(describing: node?.description())), floor:\(String(describing: floor)), ceiling:\(String(describing: ceiling))")
 
         // use many separate conditionals for easier breakpoint debugging
 
@@ -55,20 +53,19 @@ class TreeValidator {
             return true
         }
 
-        if nodeType != .root
-            && !isNodeValueWithinFloorAndCeiling(node: node, floor: floor, ceiling: ceiling) {
+        if !isNodeValueWithinFloorAndCeiling(node: node, floor: floor, ceiling: ceiling) {
             return false
         }
 
         // check node children
 
         // branch left, decrease ceiling
-        if !isValid(node: node.left, nodeType: .left, floor: floor, ceiling: node.value) {
+        if !isValid(node: node.left, floor: floor, ceiling: node.value) {
             return false
         }
 
         // branch right, increase floor
-        if !isValid(node: node.right, nodeType: .right, floor: node.value, ceiling: ceiling) {
+        if !isValid(node: node.right, floor: node.value, ceiling: ceiling) {
             return false
         }
 
