@@ -2,11 +2,21 @@
     "left": { "value": 30,
         "left": { "value": 10,
             "left": { "value": 5, "left": null, "right": null },
-            "right": { "value": 12, "left": null, "right": null } },
-        "right": { "value": 40, "left": null, "right": null }
+            "right": { "value": 12, "left": null, "right": null }
+        },
+        "right": { "value": 40,
+            "left": { "value": 34, "left": null, "right": null },
+            "right": { "value": 42, "left": null, "right": null }
+        },
     },
     "right": { "value": 80,
-        "left": { "value": 60, "left": null, "right": null },
-        "right": { "value": 90, "left": null, "right": null }
+        "left": { "value": 60,
+            "left": { "value": 53, "left": null, "right": null },
+            "right": { "value": 72, "left": null, "right": null }
+        },
+        "right": { "value": 90,
+            "left": null,
+            "right": { "value": 100, "left": null, "right": null }
+        }
     }
 }

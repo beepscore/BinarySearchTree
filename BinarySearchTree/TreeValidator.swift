@@ -23,9 +23,13 @@ class TreeValidator {
     /// - Parameters:
     ///   - tree: a node
     ///   - nodeType:
-    ///   - floor: node value must be greater than min (reset whenever go right)
+    ///   - floor: node value must be greater than ceiling.
+    ///     The value of the nearest ancestor that contains node in its right subtree.
+    ///     (reset whenever go right)
     ///     ignored if nodeType is root
-    ///   - ceiling: node value must be less than max (reset whenever go left)
+    ///   - ceiling: node value must be less than ceiling.
+    ///     The value of the nearest ancestor that contains node in its left subtree.
+    ///     (reset whenever go left)
     ///     ignored if nodeType is root
     /// - Returns: true if node is a valid binary search tree.
     ///   returns true if node is nil
@@ -34,88 +38,84 @@ class TreeValidator {
                         floor: Int,
                         ceiling: Int) -> Bool {
 
+        print("\(String(describing: node?.description())), nodeType:\(nodeType), floor:\(floor), ceiling:\(ceiling)")
+
+        // use many separate conditionals for easier breakpoint debugging
+
+        // check node
+
         guard let node = node else {
             // node is nil, we define nil as a valid tree
             print("node is nil, returning true")
             return true
         }
 
-        print("\(node.description()), nodeType:\(nodeType), floor:\(floor), ceiling:\(ceiling)")
+        if !isNodeValueWithinFloorAndCeiling(node: node, floor: floor, ceiling: ceiling) {
+            return false
+        }
 
-        // use many separate conditionals for easier breakpoint debugging
+        // check node children
 
         if let nodeLeft = node.left {
-            if nodeLeft.value >= node.value {
+
+            if !isNodeValueWithinFloorAndCeiling(node: nodeLeft, floor: floor, ceiling: node.value) {
                 return false
             }
-            if !isNodeValueWithinFloorAndCeiling(node: nodeLeft, floor: floor, ceiling: ceiling) {
+
+            // check nodeLeft subtrees
+
+            // left, left => decrease ceiling, don't change floor
+            let isLeftLeftValid = isValid(node: nodeLeft.left,
+                                      nodeType: .left,
+                                      floor: floor,
+                                      ceiling: nodeLeft.value)
+            print("\(node.description()) isLeftLeftValid: \(isLeftLeftValid)")
+            if !isLeftLeftValid {
                 return false
             }
+
+            // path switched direction, so update both floor and ceiling
+            let isLeftRightValid = isValid(node: nodeLeft.right,
+                                          nodeType: .right,
+                                          floor: nodeLeft.value,
+                                          ceiling: node.value)
+            print("\(node.description()) isLeftRightValid: \(isLeftRightValid)")
+            if !isLeftRightValid {
+                return false
+            }
+
         }
 
         if let nodeRight = node.right {
-            if nodeRight.value <= node.value {
+
+            if !isNodeValueWithinFloorAndCeiling(node: nodeRight, floor: node.value, ceiling: ceiling) {
                 return false
             }
-            if !isNodeValueWithinFloorAndCeiling(node: nodeRight, floor: floor, ceiling: ceiling) {
+
+            // check nodeRight subtrees
+
+            // path switched direction, so update both floor and ceiling
+            let isRightLeftValid = isValid(node: nodeRight.left,
+                                          nodeType: .left,
+                                          floor: node.value,
+                                          ceiling: nodeRight.value)
+            print("\(node.description()) isRightLeftValid: \(isRightLeftValid)")
+            if !isRightLeftValid {
                 return false
             }
-        }
 
-        let nextLimits = nextFloorNextCeiling(node: node,
-                                              nodeType: nodeType,
-                                              floor: floor,
-                                              ceiling: ceiling)
-
-        // check left and right subtrees
-        
-        let isLeftValid = isValid(node: node.left,
-                                  nodeType: .left,
-                                  floor: nextLimits.nextFloor,
-                                  ceiling: node.value)
-        print("\(node.description()) isLeftValid: \(isLeftValid)")
-        if !isLeftValid {
-            return false
-        }
-
-        let isRightValid = isValid(node: node.right,
-                                   nodeType: .right,
-                                   floor: node.value,
-                                   ceiling: nextLimits.nextCeiling)
-        print("\(node.description()) isRightValid: \(isRightValid)")
-        if !isRightValid {
-            return false
+            // right, right => increase floor, don't change ceiling
+            let isRightRightValid = isValid(node: nodeRight.right,
+                                           nodeType: .right,
+                                           floor: nodeRight.value,
+                                           ceiling: ceiling)
+            print("\(node.description()) isRightRightValid: \(isRightRightValid)")
+            if !isRightRightValid {
+                return false
+            }
         }
 
         return true
-    }
-
-    /// prepares for recursive calls by calculating nextFloor and nextCeiling
-    /// - Returns: named tuple (nextFloor, nextCeiling)
-    static func nextFloorNextCeiling(node: Node,
-                                     nodeType: NodeType,
-                                     floor: Int,
-                                     ceiling: Int) -> (nextFloor: Int, nextCeiling: Int) {
-
-        // start with previous values
-        var nextFloor = floor
-        var nextCeiling = ceiling
-
-        if nodeType == .root {
-            // root ignores arguments floor and ceiling
-            nextFloor = Int.min
-            nextCeiling = Int.max
-
-        } else if nodeType == .left {
-            // may lower the ceiling
-            nextCeiling = min(ceiling, node.value)
-
-        } else if nodeType == .right {
-            // may raise the floor
-            nextFloor = max(floor, node.value)
-        }
-
-        return (nextFloor, nextCeiling)
     }
 
 }
